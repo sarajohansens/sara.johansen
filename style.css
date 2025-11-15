@@ -419,4 +419,8 @@ footer {
         column-count: 1;   /* EN kolumn på liten mobil */
     }
 }
-
+@media (max-width: 600px) {
+    .lightbox-arrow {
+        display: none !important;
+    }
+}
