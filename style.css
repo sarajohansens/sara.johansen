@@ -424,3 +424,21 @@ footer {
         display: none !important;
     }
 }
+
+/* MOBIL: två kolumner under 600px */
+@media (max-width: 600px) {
+    .gallery-grid {
+        column-count: 2;
+        column-gap: 14px;
+        padding: 0 12px;
+    }
+
+    .gallery-item {
+        margin-bottom: 18px;
+    }
+
+    .gallery-title {
+        font-size: 11px;
+    }
+}
+
