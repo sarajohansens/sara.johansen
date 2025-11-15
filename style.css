@@ -1,0 +1,409 @@
+/* =======================
+   FONTER
+======================= */
+@font-face {
+    font-family: 'MinFont';
+    src: url('minfont.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* =======================
+   FÄRGER
+======================= */
+:root {
+    --beige: #F3E6D9;
+    --vit-varm: #F7F4EF;
+    --morkbla: #1F2B3A;
+    --text-mork: #4A4A4A;
+}
+
+/* =======================
+   GRUND
+======================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--beige);
+    color: var(--text-mork);
+    font-family: 'MinFont', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Maxbredd */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =======================
+   HEADER & NAV
+======================= */
+header {
+    padding: 30px 0 10px;
+    text-align: center;
+}
+
+.brand-logo {
+    font-family: 'MinFont', serif;
+    font-size: 44px;
+    letter-spacing: 0.08em;
+    color: var(--morkbla);
+}
+
+nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    width: 0;
+    height: 1px;
+    background-color: var(--morkbla);
+    transition: width 0.2s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =======================
+   HERO
+======================= */
+.hero {
+    position: relative;
+    min-height: 70vh;
+    background-image: url("hero.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(31, 43, 58, 0.60),
+        rgba(31, 43, 58, 0.78)
+    );
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: var(--vit-varm);
+    padding: 30px;
+}
+
+.hero-title {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    max-width: 420px;
+    margin: 0 auto 25px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 999px;
+    background-color: var(--morkbla);
+    color: var(--vit-varm);
+    border: 1px solid var(--vit-varm);
+    transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+    background-color: #263548; /* lite ljusare mörkblå */
+    transform: scale(1.04);
+    border-color: var(--vit-varm);
+}
+
+
+/* =======================
+   GALLERI – MASONRY / ART STYLE (justerad)
+======================= */
+
+.gallery-section {
+    background-color: var(--vit-varm);
+    padding: 70px 0;
+}
+
+
+
+
+.section-title {
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+/* Masonry-grid */
+.gallery-grid {
+    column-count: 3;       /* antal kolumner */
+    column-gap: 28px;      /* mellanrum mellan kolumner */
+    padding: 0 15px;       /* gör bilderna visuellt lite mindre */
+}
+
+/* Varje bildcontainer */
+.gallery-item {
+    width: 100%;
+    margin-bottom: 28px;   /* avstånd mellan bilderna vertikalt */
+    break-inside: avoid;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Bilderna */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    transition: transform 0.25s ease; /* gör pop smooth */
+}
+
+/* Pop-effekt på hover */
+.gallery-item:hover img {
+    transform: scale(1.04); /* 1.04 = lagom poppigt */
+}
+
+
+.gallery-overlay span {
+    color: var(--vit-varm);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.gallery-title {
+    font-family: 'MinFont', serif;
+    font-size: 13px;
+    color: var(--text-mork);
+    text-align: center;
+    margin-top: 6px;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* =======================
+   KONTAKT
+======================= */
+.contact {
+    background-color: var(--morkbla);
+    color: var(--vit-varm);
+    padding: 70px 0 45px; /* mindre nedåt */
+}
+
+.contact-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact a {
+    text-decoration: underline;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+    background-color: var(--morkbla);
+    color: var(--vit-varm);
+    padding: 22px 0 26px;
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid rgba(247, 244, 239, 0.18); /* tunn linje */
+    opacity: 0.9; /* gör footern lugnare än kontaktblocket */
+}
+
+.footer-logo {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    margin-bottom: 5px;
+}
+
+/* =======================
+   LIGHTBOX – KLICK FÖR ATT VISA STÖRRE
+======================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+    display: none;              /* dold från början */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-inner img {
+    max-width: 80vw;  /* lite mindre för både kvadrat & rektangel */
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    animation: lightbox-in 0.25s ease;
+}
+
+@keyframes lightbox-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.03) translateY(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Pilarna i lightboxen */
+.lightbox-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pilarna fixas mot skärmen istället för mot bilden */
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: rgba(247, 244, 239, 0.9);
+    font-size: 32px;
+    padding: 8px 12px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1100; /* över bilden */
+}
+
+.lightbox-arrow:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox-prev {
+    left: 32px;   /* fast position från vänsterkant */
+}
+
+.lightbox-next {
+    right: 32px;  /* fast position från högerkant */
+}
+
+@media (max-width: 600px) {
+    .lightbox-arrow {
+        font-size: 26px;
+        padding: 6px 8px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .lightbox-prev {
+        left: 16px;
+    }
+
+    .lightbox-next {
+        right: 16px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .lightbox-arrow {
+        font-size: 26px;
+        padding: 6px 8px;
+    }
+}
+
+.lightbox-info {
+    margin-top: 18px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: 'MinFont', serif;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+    animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation vid bildbyte (höger/vänsterpil) */
+.lightbox-inner img.slide-change {
+    animation: slide-change 0.25s ease;
+}
+
+@keyframes slide-change {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation när man bläddrar till nästa/föregående bild */
+.lightbox-inner img.slide-change {
+    animation: slide-change 0.25s ease;
+}
+
+@keyframes slide-change {
+    from {
+        opacity: 0;
+        transform: scale(0.97) translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
