@@ -279,7 +279,6 @@
         </div>
     </footer>
 
-    <!-- LIGHTBOX FÖR STÖRRE BILD -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox-inner">
             <button class="lightbox-arrow lightbox-prev" aria-label="Föregående bild">‹</button>
@@ -307,26 +306,26 @@ function setLightboxContent(index) {
     const img = item.querySelector("img");
     if (!img) return;
 
-    // sätt bild
+    
     lightboxImg.src = img.src;
 
-    // hämta titelboxen
+    
     const titleEl = item.querySelector(".gallery-title");
     if (!titleEl || !infoBox) return;
 
-    // huvudrad
+    
     const mainEl = titleEl.querySelector(".gallery-main");
     const mainText = mainEl ? mainEl.textContent : "";
 
-    // mått
+   
     const sizeEl = titleEl.querySelector(".gallery-size");
     const sizeText = sizeEl ? sizeEl.textContent : "";
 
-    // SÅLD
+   
     const soldEl = titleEl.querySelector(".sold-badge");
     const soldText = soldEl ? soldEl.textContent : "";
 
-    // bygg innehållet till lightboxen
+    
     let html = `
         <div class="lb-title">${mainText}</div>
         <div class="lb-size">${sizeText}</div>
@@ -343,7 +342,7 @@ function setLightboxContent(index) {
 
     function runSlideAnimation() {
         lightboxImg.classList.remove("slide-change");
-        void lightboxImg.offsetWidth; // tvingar omritning så animationen kan starta om
+        void lightboxImg.offsetWidth; 
         lightboxImg.classList.add("slide-change");
     }
 
@@ -361,14 +360,14 @@ function setLightboxContent(index) {
         runSlideAnimation();
     }
 
-    // Klick på en tavla -> öppna lightbox med rätt index
+    
     items.forEach(function (item, index) {
         item.addEventListener("click", function () {
             openLightbox(index);
         });
     });
 
-    // Pilarna
+    
     if (prevBtn && nextBtn) {
         prevBtn.addEventListener("click", function (e) {
             e.stopPropagation();
@@ -381,7 +380,7 @@ function setLightboxContent(index) {
         });
     }
 
-    // Stäng när man klickar på bakgrunden
+   
     lightbox.addEventListener("click", function (e) {
         if (e.target === lightbox) {
             lightbox.classList.remove("open");
@@ -389,7 +388,7 @@ function setLightboxContent(index) {
         }
     });
 
-    // ESC för att stänga, piltangenter för att bläddra
+   
     document.addEventListener("keydown", function (e) {
         if (!lightbox.classList.contains("open")) return;
 
