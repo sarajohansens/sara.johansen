@@ -583,3 +583,18 @@ footer {
     opacity: 1;
 }
 
+@media (max-width: 600px) {
+    .instagram-section {
+        padding: 28px 0 28px;
+    }
+
+    .insta-inner p {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .insta-link {
+        font-size: 17px;
+    }
+}
+
