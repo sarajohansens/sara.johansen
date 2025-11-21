@@ -142,7 +142,7 @@ nav a:hover::after {
 
 
 .gallery-section {
-    background-color: var(--vit-varm);
+    background-color: var(--beige);
     padding: 70px 0;
 }
 
@@ -181,6 +181,24 @@ nav a:hover::after {
     border-radius: 6px;
     transition: transform 0.25s ease; 
 }
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;                     /* täcker hela bilden */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(31, 43, 58, 0.55);  /* mörk blåtonad overlay */
+    opacity: 0;                   /* dold från början */
+    border-radius: 6px;           /* samma rundning som bilden */
+    transition: opacity 0.2s ease;
+}
+
+/* visa overlay vid hover på större skärmar */
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
 
 
 .gallery-item:hover img {
@@ -330,6 +348,39 @@ footer {
     right: 32px;  
 }
 
+.gallery-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* flytta din overlay-hit om den inte redan ligger där */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(31, 43, 58, 0.55);
+    opacity: 0;
+    border-radius: 6px;
+    transition: opacity 0.2s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.lightbox-close {
+    display: none; /* gömd på desktop */
+}
+
 @media (max-width: 600px) {
     .lightbox-arrow {
         font-size: 30px;
@@ -345,7 +396,32 @@ footer {
     .lightbox-next {
         right: 10px;
     }
+
+    .lightbox-close {
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(0,0,0,0);
+        color: #F7F4EF;
+        border: none;
+        font-size: 26px;
+        line-height: 1;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.9;
+        transition: opacity 0.15s ease;
 }
+
+.lightbox-close:hover {
+        opacity: 1;
+    }
 
 
 @media (max-width: 600px) {
@@ -443,7 +519,15 @@ footer {
    .lightbox-arrow {
         display: none !important;
     }
+
+    .gallery-item:hover img {
+    transform: scale(1.0); 
 }
+.gallery-overlay {
+    display: none; 
+}
+}
+
 
 .sold-badge {
     display: inline-block;
