@@ -133,7 +133,7 @@ nav a:hover::after {
 }
 
 .btn-primary:hover {
-    background-color: #263548; /* lite ljusare mörkblå */
+    background-color: #263548; 
     transform: scale(1.04);
     border-color: var(--vit-varm);
 }
@@ -184,13 +184,13 @@ nav a:hover::after {
 
 .gallery-overlay {
     position: absolute;
-    inset: 0;                     /* täcker hela bilden */
+    inset: 0;                     
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(31, 43, 58, 0.55);  /* mörk blåtonad overlay */
-    opacity: 0;                   /* dold från början */
-    border-radius: 6px;           /* samma rundning som bilden */
+    background: rgba(31, 43, 58, 0.55);  
+    opacity: 0;                   
+    border-radius: 6px;         
     transition: opacity 0.2s ease;
 }
 
@@ -360,7 +360,7 @@ footer {
     display: block;
 }
 
-/* flytta din overlay-hit om den inte redan ligger där */
+
 .gallery-overlay {
     position: absolute;
     inset: 0;
@@ -378,7 +378,7 @@ footer {
 }
 
 .lightbox-close {
-    display: none; /* gömd på desktop */
+    display: none;
 }
 
 @media (max-width: 600px) {
@@ -598,10 +598,10 @@ footer {
     }
 }
 
-/* Badge för posters (liknande sold-badge men egen ton) */
+
 .poster-badge {
   display: inline-block;
-  background: #2E6F4E;           /* dov grön */
+  background: #2E6F4E;         
   color: #F7F4EF;
   font-size: 11px;
   padding: 2px 6px;
@@ -613,7 +613,7 @@ footer {
   opacity: 0.85;
 }
 
-/* Lightbox CTA-knapp till Printler */
+
 .lb-cta {
   display: inline-block;
   margin-top: 12px;
@@ -636,7 +636,7 @@ footer {
 .hero-posters {
     position: relative;
     min-height: 45vh;
-    background-image: url("malning-3.jpg"); /* BYT BILD HÄR */
+    background-image: url("malning-3.jpg"); 
     background-size: cover;
     background-position: center;
     display: flex;
@@ -644,7 +644,7 @@ footer {
     justify-content: center;
 }
 
-/* mörk toning som din vanliga hero men lite mildare */
+
 .hero-posters::before {
     content: "";
     position: absolute;
